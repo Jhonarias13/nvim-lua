@@ -7,12 +7,22 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 require("nvim-tree").setup({
+  git = {
+    enable = true,
+  },
   sort_by = "case_sensitive",
   view = {
     width = 30,
+    side = "right",
   },
   renderer = {
     group_empty = true,
+    highlight_git = true,
+    icons = {
+      show = {
+        git = true,
+      },
+    },
   },
   filters = {
     dotfiles = true,

@@ -17,20 +17,72 @@ return require('packer').startup(function(use)
   
   -- Themes
   use "folke/tokyonight.nvim"
+  use("oxfist/night-owl.nvim") 
 
-  vim.cmd([[ set background=light ]]) 
-  vim.cmd[[ colorscheme tokyonight ]]
-  
   -- nvim tree for sidebar & telescope
   use "nvim-tree/nvim-tree.lua"
   use "nvim-tree/nvim-web-devicons"
   use "nvim-treesitter/nvim-treesitter"
-  
+
+  -- completions
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-nvim-lsp"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+  use "saadparwaiz1/cmp_luasnip" 
+
+  -- formatter
+ 
+  -- lsp -> language server protocols
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "glepnir/lspsaga.nvim", branch = "main", -- for window like vscode
+    "jose-elias-alvarez/typescript.nvim",
+    "onsails/lspkind.nvim"
+  }
+
+  -- telescope, fuzzy search
   use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
     requires = {{"nvim-lua/plenary.nvim"}}
+  } 
+
+  -- lualine theme
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+
+  -- autopairs
+  use "windwp/nvim-autopairs"
+  use "windwp/nvim-ts-autotag"
+
+  -- tmx navigator
+  use { 'alexghergh/nvim-tmux-navigation', config = function()
+
+        local nvim_tmux_nav = require('nvim-tmux-navigation')
+
+        nvim_tmux_nav.setup {
+            disable_when_zoomed = true -- defaults to false
+        }
+
+        vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+        vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+        vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+        vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+        vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+        vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+    end
+  }
+
   -- end if plugins section
   if packer_bootstrap then
     require('packer').sync()
