@@ -5,5 +5,8 @@ require("andromeda").setup({
 	},
 })
 
-vim.cmd([[ set background=dark]])
-vim.cmd([[ colorscheme andromeda ]])
+vim.cmd([[ set background=light]])
+-- vim.cmd([[ colorscheme  night-owl ]])
+-- vim.cmd([[ colorscheme  tokyonight ]])
+-- vim.cmd([[ colorscheme  bluloco ]])
+vim.cmd([[ colorscheme  andromeda ]])

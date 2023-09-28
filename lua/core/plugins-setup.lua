@@ -27,6 +27,14 @@ return require("packer").startup(function(use)
 		requires = { "tjdevries/colorbuddy.nvim", branch = "dev" },
 	})
 
+	-- add auto commentary
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
 	-- nvim tree for sidebar & telescope
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
