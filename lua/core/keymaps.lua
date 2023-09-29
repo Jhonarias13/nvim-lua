@@ -20,6 +20,16 @@ vim.keymap.set("n", "<Leader><Left>", "0")
 -- This keybinding uses jk as the scape key to exit a mode
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 
+-- this command fold all code with Leader + k + 0 (zero) using foldmethod = indent
+vim.keymap.set("n", "<Leader>k0", "<cmd>set foldmethod=indent<CR> zM")
+-- this command unfold all code with Leader + k + j 
+vim.keymap.set("n", "<Leader>kj", "zR")
+
+-- this command open file from nvim-tree in split window usign Leader + o
+vim.keymap.set("n", "<Leader>o", "")
+
+
+
 -- this command to jump to file over cursor
 vim.api.nvim_set_keymap("n", "<Leader>gf", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })  
 -- This keymap clears search
