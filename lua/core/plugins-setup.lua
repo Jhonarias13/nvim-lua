@@ -26,7 +26,10 @@ return require("packer").startup(function(use)
 		"nobbmaestro/nvim-andromeda",
 		requires = { "tjdevries/colorbuddy.nvim", branch = "dev" },
 	})
+	use({ "projekt0n/github-nvim-theme" })
 
+	-- bracketpairs
+	use("fedepujol/bracketpair.nvim")
 	-- add auto commentary
 	use({
 		"numToStr/Comment.nvim",
@@ -35,9 +38,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-  -- add github copilot
+	-- add github copilot
 
-  use("github/copilot.vim")
+	use("github/copilot.vim")
 
 	-- nvim tree for sidebar & telescope
 	use("nvim-tree/nvim-tree.lua")

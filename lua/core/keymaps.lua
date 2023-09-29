@@ -12,9 +12,16 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldmethod = 'indent' -- Establece el método de plegado a indent
 
+-- go to the last word in the line with Leader + arrow right
+vim.keymap.set("n", "<Leader><Right>", "$")
+-- go to the first word in the line with Leader + arrow left
+vim.keymap.set("n", "<Leader><Left>", "0")
+
 -- This keybinding uses jk as the scape key to exit a mode
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 
+-- this command to jump to file over cursor
+vim.api.nvim_set_keymap("n", "<Leader>gf", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })  
 -- This keymap clears search
 vim.keymap.set("n", "<Leader>h", ":nohlsearch<CR>")
 
