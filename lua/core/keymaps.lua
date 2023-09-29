@@ -6,6 +6,11 @@ vim.o.number = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.smartindent = true
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldmethod = 'indent' -- Establece el método de plegado a indent
 
 -- This keybinding uses jk as the scape key to exit a mode
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })

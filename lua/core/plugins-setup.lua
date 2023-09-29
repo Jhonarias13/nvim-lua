@@ -35,17 +35,15 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+  -- add github copilot
+
+  use("github/copilot.vim")
+
 	-- nvim tree for sidebar & telescope
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
-	-- use("nvim-treesitter/nvim-treesitter")
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-		end,
-	})
+	use("nvim-treesitter/nvim-treesitter")
+
 	-- completions
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
