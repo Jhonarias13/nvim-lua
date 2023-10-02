@@ -14,6 +14,7 @@ vim.wo.foldmethod = 'indent' -- Establece el método de plegado a indent
 
 -- go to the last word in the line with Leader + arrow right
 vim.keymap.set("n", "<Leader><Right>", "$")
+
 -- go to the first word in the line with Leader + arrow left
 vim.keymap.set("n", "<Leader><Left>", "0")
 
@@ -22,6 +23,7 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 
 -- this command fold all code with Leader + k + 0 (zero) using foldmethod = indent
 vim.keymap.set("n", "<Leader>k0", "<cmd>set foldmethod=indent<CR> zM")
+
 -- this command unfold all code with Leader + k + j 
 vim.keymap.set("n", "<Leader>kj", "zR")
 
@@ -41,6 +43,10 @@ vim.keymap.set("n", "<Leader>z", ":ea<CR>")
 -- This keymap set up space + w to save and space + q to quit
 vim.api.nvim_set_keymap("n", "<Leader>w", ":w<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>q", ":q<CR>", { noremap = true, silent = true })
+
+-- this keymap set up space + shift + w to force save 
+vim.api.nvim_set_keymap("n", "<Leader>W", ":w!<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>Q", ":q!<CR>", { noremap = true, silent = true })
 
 -- this keymap set up space + f to format document
 vim.api.nvim_set_keymap("n", "<Leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })

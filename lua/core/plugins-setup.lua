@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
 	use({ "projekt0n/github-nvim-theme" })
 
 	-- bracketpairs
-	use("fedepujol/bracketpair.nvim")
+	-- use("fedepujol/bracketpair.nvim")
 	-- add auto commentary
 	use({
 		"numToStr/Comment.nvim",
