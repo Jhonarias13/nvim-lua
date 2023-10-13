@@ -4,11 +4,14 @@ configs.setup({
 	highlight = {
 		enable = true,
 	},
-
+ 
+  auto_tag = {
+    enable = true,
+  },
 	-- esta linea es para que se habilite o deshabilite el indentado
 	indent = {
 		enable = false,
-    disable = {'javascript', 'javascriptreact', 'typescriptreact', 'html', 'css', 'json', 'yaml', 'python', 'lua'},
+    disable = {},
 },
 
 	-- Automatically install missing parsers when entering buffer

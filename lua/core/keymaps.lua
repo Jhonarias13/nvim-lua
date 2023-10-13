@@ -34,6 +34,10 @@ vim.keymap.set("n", "<Leader>o", "")
 
 -- this command to jump to file over cursor
 vim.api.nvim_set_keymap("n", "<Leader>gf", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })  
+
+-- this commando return to last buffer with Leader + delete
+vim.keymap.set("n", "<Leader>B", "<cmd>b#<CR>")
+
 -- This keymap clears search
 vim.keymap.set("n", "<Leader>h", ":nohlsearch<CR>")
 

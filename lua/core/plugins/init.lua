@@ -5,7 +5,7 @@ require("core.plugins.lualine")
 require("core.plugins.autopairs")
 require("core.plugins.nvim-treesitter")
 require("core.plugins.Comment")
-
+require("core.plugins.gitsigns")
 -- lsp imports
 require("core.plugins.lsp.mason")
 require("core.plugins.lsp.nvim-cmp")

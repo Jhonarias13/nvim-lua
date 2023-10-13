@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 	use("nvim-tree/nvim-web-devicons")
 	use("nvim-treesitter/nvim-treesitter")
+  -- use("nvim-treesitter/nvim-treesitter-refactor)
 
 	-- completions
 	use("hrsh7th/nvim-cmp")
@@ -78,6 +79,9 @@ return require("packer").startup(function(use)
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
+  -- gitsigns
+  use("lewis6991/gitsigns.nvim")
 
 	-- lualine theme
 	use({

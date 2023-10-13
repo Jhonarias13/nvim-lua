@@ -3,6 +3,12 @@ if not saga_status then
     return
 end
 
+-- saga.init_lsp_saga {
+--   server_filetype_map = {
+--     typescript = 'typescript'
+--   }
+-- }
+
 saga.setup({
     move_in_saga = { prev = "<C-k", next = "<C-j>" },
     finder_action_keys = {
